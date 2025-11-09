@@ -16,4 +16,4 @@ const PrivateRouter = ({childern}) => {
 
 };
 
-export default PrivateRouter;{childern}
+export default PrivateRouter;
