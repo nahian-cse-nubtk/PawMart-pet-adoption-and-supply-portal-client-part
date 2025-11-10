@@ -45,7 +45,7 @@ export default function AddProducts() {
 
   return (
     <motion.div
-      className="max-w-3xl mx-auto p-8 rounded-3xl shadow-lg bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-300/40 mt-10"
+      className="max-w-3xl mx-auto p-8 rounded-3xl shadow-lg bg-linear-to-br from-amber-50 to-amber-100 border border-amber-300/40 mt-10"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}

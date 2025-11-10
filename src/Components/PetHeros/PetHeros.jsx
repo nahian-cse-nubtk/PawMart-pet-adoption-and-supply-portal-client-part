@@ -53,7 +53,7 @@ export default function PetHeroes() {
               src={hero.img}
               alt={hero.name}
               className="w-full h-64 object-cover"
-            />
+            /> 
             <div className="p-5 text-center">
               <h3 className="text-lg font-semibold text-gray-800">{hero.name}</h3>
               <p className="text-sm text-orange-500 font-medium mb-2">{hero.role}</p>
