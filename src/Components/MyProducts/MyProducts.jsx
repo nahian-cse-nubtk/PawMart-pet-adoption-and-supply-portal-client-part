@@ -7,12 +7,14 @@ import { motion } from "framer-motion";
 import { toast } from 'react-toastify';
 
 
+
 const MyProducts = () => {
     const axios =useAxiosSecure();
     const {user} =useAuth();
     const  [products, setProducts] = useState([])
 
     const modalRef = useRef()
+
 
     const [formData, setFormData] = useState({});
     const [id,setId]= useState([])
@@ -64,14 +66,27 @@ const MyProducts = () => {
         if(data.data.matchedCount){
             toast('Update Successful')
             modalRef.current.close();
+            window.location.reload()
+
 
         }
 
   })
 
-
-
     };
+
+    const handleDelete =(id)=>{
+      axios.delete(`/categories/${id}`)
+      .then(data=>{
+        if(data.data.deletedCount){
+          toast('Delete Successful')
+          const remainingData = products.filter(product=>id!==product._id)
+          setProducts(remainingData);
+
+        }
+      })
+
+    }
     return (
         <>
         <div className="overflow-x-auto">
@@ -117,7 +132,7 @@ const MyProducts = () => {
         <td>
             <div className='flex justify-center gap-3'>
                 <button onClick={()=>handleEditButton(product._id)}><FaEdit size={25}/></button>
-             <button><MdDelete size={25}/></button>
+             <button onClick={()=>handleDelete(product._id)}><MdDelete size={25}/></button>
             </div>
             </td>
 
@@ -296,7 +311,7 @@ const MyProducts = () => {
         </motion.button>
       </form>
     </motion.div>
-    
+
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}

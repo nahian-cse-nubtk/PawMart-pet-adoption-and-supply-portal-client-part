@@ -7,6 +7,7 @@ import Register from "../../Pages/Register/Register";
 import Login from "../../Pages/Login/Login";
 import AddProducts from "../../Pages/AddProducts/AddProducts";
 import MyProducts from "../../Components/MyProducts/MyProducts";
+import PetsAndSupplies from "../../Pages/PetsAndSupplies/PetsAndSupplies";
 
 
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([{
         {
             path: '/my-listings',
             Component: MyProducts
+        },
+        {
+            path: '/pets-supplies',
+            Component: PetsAndSupplies
         }
 
     ]
