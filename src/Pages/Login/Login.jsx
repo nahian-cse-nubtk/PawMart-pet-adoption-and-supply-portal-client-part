@@ -1,13 +1,58 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router";
+import useAuth from "../../Hooks/useAuth";
+import { toast } from "react-toastify";
 
 const Login = () => {
+
+    const {signInUser,signInwithGoogle}=useAuth();
+    const [error, setError]=useState("")
+    const navigate =useNavigate()
+
+    const handleLogin=(e)=>{
+        e.preventDefault();
+        setError("")
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInUser(email,password)
+        .then(result=>{
+            if(result.user){
+                toast("Login successful");
+
+            }
+        })
+        .catch(err=>{
+            if(err){
+                setError("Email and Password not valid");
+                toast("Failed to sign In")
+
+            }
+        })
+    }
+
+    const handleGoogleSignIn=()=>{
+            signInwithGoogle()
+            .then(result=>{
+                if(result.user){
+                  toast('Sign in successful')
+
+                }
+                }
+            )
+            .catch(error=>{
+                if(error){
+                toast('Failed to sign in');
+                }
+            }
+        )
+        }
+
   return (
     <>
     <h1 className="text-center font-bold text-4xl my-5">Login Now!</h1>
     <div className="mx-auto mb-10 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
-        <form>
+        <form onSubmit={handleLogin}>
           <fieldset className="fieldset">
             <label className="label">Email</label>
             <input
@@ -24,12 +69,12 @@ const Login = () => {
               placeholder="Password"
             />
             <div>
-              <p className="text-red-500">error</p>
+              <p className="text-red-500">{error}</p>
             </div>
             <button className="btn bg-amber-100 mt-4">Login</button>
           </fieldset>
         </form>
-        <button className="btn bg-white text-black border-[#e5e5e5]">
+        <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
           <svg
             aria-label="Google logo"
             width="16"

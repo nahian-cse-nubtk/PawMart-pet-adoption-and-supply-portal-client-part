@@ -20,8 +20,9 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signInWithPopup(auth,GoogleProvider)
     }
-    const profileUpdate =(profile)=>{
-        return updateProfile(user,profile);
+    const profileUpdate =(currentUser,profile)=>{
+        console.log(profile);
+        return updateProfile(currentUser,profile);
     }
 
     const signOutUser =()=>{

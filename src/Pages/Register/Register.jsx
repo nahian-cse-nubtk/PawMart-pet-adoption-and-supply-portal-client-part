@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Register = () => {
 
-    const {createUser,signInwithGoogle }=useAuth()
+    const {createUser,signInwithGoogle,profileUpdate }=useAuth()
 
     const [error, setError] = useState("");
 
@@ -20,7 +20,10 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        
+        const profile ={displayName: name, photoURL: photoUrl}
+        console.log(profile);
+
+
         if(!uppercaseRegex.test(password)){
 
             setError('Password must contain atlest one uppercase')
@@ -44,6 +47,13 @@ const Register = () => {
         .then(result=>{
             if(result.user){
               toast('Registration successful')
+              profileUpdate(result.user,profile)
+              .then(()=>{
+                //
+              })
+              .catch(error=>{
+                console.log(error);
+              })
             }
             }
         )
@@ -60,17 +70,18 @@ const Register = () => {
         .then(result=>{
             if(result.user){
               toast('Sign in successful')
+
             }
             }
         )
         .catch(error=>{
-            setError(error)
+            if(error){
             toast('Failed to sign in');
+            }
         }
 
         )
-
-    }
+}
   return (
     <>
     <h1 className="text-center font-bold text-4xl my-5">Register Now!</h1>
@@ -83,28 +94,28 @@ const Register = () => {
             type="text"
             className="input"
             name="name"
-            placeholder="Enter Your Name"
+            placeholder="Enter Your Name" required
           />
           <label className="label">Photo URL</label>
           <input
             type="text"
             className="input"
             name="photoUrl"
-            placeholder="Enter Your PhotoURL"
+            placeholder="Enter Your PhotoURL" required
           />
           <label className="label">Email</label>
           <input
             type="email"
             className="input"
             name="email"
-            placeholder="Email"
+            placeholder="Email" required
           />
           <label className="label">Password</label>
           <input
             type="password"
             className="input"
             name="password"
-            placeholder="Password"
+            placeholder="Password" required
           />
           <div>
             <p className="text-red-500">{error}</p>

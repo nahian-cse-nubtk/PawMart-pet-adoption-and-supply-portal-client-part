@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
+import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 
 const Navbar = () => {
+    const {user}=useAuth();
+    console.log(user);
 
     const links=<>
     <li><NavLink to='/'>Home</NavLink></li>
@@ -16,7 +19,7 @@ const Navbar = () => {
     }
     </>
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar text-white bg-linear-to-r from-amber-500 to-orange-600 shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +47,9 @@ const Navbar = () => {
 
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">PawMart</a>
+        <h1 className="text-2xl font-bold tracking-wide flex items-center gap-1">
+          🐾 <span className="font-extrabold text-white drop-shadow">PawMart</span>
+        </h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -53,8 +58,13 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div className="font-bold space-x-1">
-            <Link to='/register'>Register</Link>
-            <Link to='/login'>Login</Link>
+            {
+                user?<ProfileDropdown/>:<>
+                <Link to='/register'>Register</Link>
+                <Link to='/login'>Login</Link>
+                </>
+            }
+            
         </div>
       </div>
     </div>
