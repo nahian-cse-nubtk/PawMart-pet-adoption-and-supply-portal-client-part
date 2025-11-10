@@ -5,6 +5,8 @@ import Home from "../../Pages/Home/Home";
 import FilteredCategory from "../../Components/FilteredCategory/FilteredCategory";
 import Register from "../../Pages/Register/Register";
 import Login from "../../Pages/Login/Login";
+import AddProducts from "../../Pages/AddProducts/AddProducts";
+import MyProducts from "../../Components/MyProducts/MyProducts";
 
 
 
@@ -27,6 +29,14 @@ const router = createBrowserRouter([{
         {
             path: '/login',
             Component: Login
+        },
+        {
+            path: '/add-listing',
+            Component: AddProducts
+        },
+        {
+            path: '/my-listings',
+            Component: MyProducts
         }
 
     ]

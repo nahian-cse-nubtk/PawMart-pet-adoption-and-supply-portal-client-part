@@ -56,6 +56,7 @@ export default function ProfileDropdown() {
                   <div>
                     <p className="text-sm text-black">Welcome back,</p>
                     <p className="font-semibold text-black">{user?.displayName}</p>
+                    <p className="font-semibold text-black">{user?.email}</p>
                   </div>
                 </div>
 
