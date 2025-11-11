@@ -8,6 +8,7 @@ import Login from "../../Pages/Login/Login";
 import AddProducts from "../../Pages/AddProducts/AddProducts";
 import MyProducts from "../../Components/MyProducts/MyProducts";
 import PetsAndSupplies from "../../Pages/PetsAndSupplies/PetsAndSupplies";
+import ProductDetails from "../../Components/ProductDetails/ProductDetails";
 
 
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([{
         {
             path: '/pets-supplies',
             Component: PetsAndSupplies
+        },
+        {
+            path: '/product/:productId',
+            Component: ProductDetails
         }
 
     ]
