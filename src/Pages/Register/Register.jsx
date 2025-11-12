@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
 
@@ -8,6 +8,8 @@ const Register = () => {
     const {createUser,signInwithGoogle,profileUpdate }=useAuth()
 
     const [error, setError] = useState("");
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const uppercaseRegex = /^(?=.*[A-Z]).+$/;
     const lowercaseRegex = /^(?=.*[a-z]).+$/;
@@ -19,6 +21,7 @@ const Register = () => {
         const photoUrl =e.target.photoUrl.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+
 
         const profile ={displayName: name, photoURL: photoUrl}
         console.log(profile);
@@ -49,7 +52,7 @@ const Register = () => {
               toast('Registration successful')
               profileUpdate(result.user,profile)
               .then(()=>{
-                //
+                navigate(location.state||'/')
               })
               .catch(error=>{
                 console.log(error);
@@ -69,6 +72,7 @@ const Register = () => {
         signInwithGoogle()
         .then(result=>{
             if(result.user){
+              navigate(location.state||'/')
               toast('Sign in successful')
 
             }

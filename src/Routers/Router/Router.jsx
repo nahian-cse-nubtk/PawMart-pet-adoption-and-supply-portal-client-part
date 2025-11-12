@@ -10,6 +10,9 @@ import MyProducts from "../../Pages/MyProducts/MyProducts";
 import PetsAndSupplies from "../../Pages/PetsAndSupplies/PetsAndSupplies";
 import ProductDetails from "../../Components/ProductDetails/ProductDetails";
 import MyOrders from "../../Pages/MyOrders/MyOrders";
+import PrivateRouter from "../PivateRouter/PrivateRouter";
+import Error404page from "../../Components/Error404page/Error404page";
+import ProductNotFound from "../../Components/ProductNotFound/ProductNotFound";
 
 
 
@@ -35,11 +38,11 @@ const router = createBrowserRouter([{
         },
         {
             path: '/add-listing',
-            Component: AddProducts
+            element: <PrivateRouter><AddProducts></AddProducts></PrivateRouter>
         },
         {
             path: '/my-listings',
-            Component: MyProducts
+            element: <PrivateRouter><MyProducts></MyProducts></PrivateRouter>
         },
         {
             path: '/pets-supplies',
@@ -47,14 +50,20 @@ const router = createBrowserRouter([{
         },
         {
             path: '/product/:productId',
-            Component: ProductDetails
+            element:<PrivateRouter><ProductDetails></ProductDetails></PrivateRouter>,
+            errorElement: <ProductNotFound></ProductNotFound>
         },
         {
             path: '/my-orders',
-            Component: MyOrders
+            element: <PrivateRouter><MyOrders></MyOrders></PrivateRouter>
         }
 
     ]
 
-}])
+},
+{
+    path: '*',
+    Component: Error404page
+}
+])
 export default router;

@@ -75,17 +75,18 @@ const MyProducts = () => {
 
         axios.delete(`/categories/${id}`).then((data) => {
       if (data.data.deletedCount) {
-        toast("Delete Successful");
-        const remainingData = products.filter((product) => id !== product._id);
-        setProducts(remainingData);
-      }
-    });
-
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
           icon: "success",
         });
+
+        const remainingData = products.filter((product) => id !== product._id);
+        setProducts(remainingData);
+      }
+    });
+
+
       }
     });
 

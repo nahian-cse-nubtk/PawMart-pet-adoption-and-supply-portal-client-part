@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
 
@@ -8,6 +8,7 @@ const Login = () => {
     const {signInUser,signInwithGoogle}=useAuth();
     const [error, setError]=useState("")
     const navigate =useNavigate()
+    const location = useLocation()
 
     const handleLogin=(e)=>{
         e.preventDefault();
@@ -18,6 +19,7 @@ const Login = () => {
         .then(result=>{
             if(result.user){
                 toast("Login successful");
+                navigate(location.state||'/')
 
             }
         })
@@ -35,6 +37,7 @@ const Login = () => {
             .then(result=>{
                 if(result.user){
                   toast('Sign in successful')
+                  navigate(location.state||'/')
 
                 }
                 }
