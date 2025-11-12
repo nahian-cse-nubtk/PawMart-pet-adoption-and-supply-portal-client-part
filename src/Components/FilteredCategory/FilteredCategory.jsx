@@ -15,7 +15,7 @@ const FilteredCategory = () => {
 
     })
     return (
-        <div className='p-5 bg-amber-50'>
+        <div className='p-5 bg-amber-50 dark:bg-gray-600'>
             <h1 className='py-10 text-center text-4xl font-bold'>{categoryName} Category </h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 {

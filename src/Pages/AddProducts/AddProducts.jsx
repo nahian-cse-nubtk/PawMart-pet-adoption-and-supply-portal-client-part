@@ -45,12 +45,12 @@ export default function AddProducts() {
 
   return (
     <motion.div
-      className="max-w-3xl mx-auto p-8 rounded-3xl shadow-lg bg-linear-to-br from-amber-50 to-amber-100 border border-amber-300/40 mt-10"
+      className="max-w-3xl mb-5 mx-auto p-8 rounded-3xl shadow-lg bg-linear-to-br from-amber-50 to-amber-100 dark:bg-linear-to-br dark:from-gray-600 dark:to-gray-700 border border-amber-300/40 dark:border-gray-400 mt-10"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-3xl font-bold text-amber-700 mb-6 text-center">
+      <h2 className="text-3xl font-bold text-amber-700 dark:text-gray-200 mb-6 text-center">
         🐾 Add a Product / Pet
       </h2>
 
@@ -60,7 +60,7 @@ export default function AddProducts() {
       >
         {/* Product / Pet Name */}
         <div className="col-span-1">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800  dark:text-gray-200 font-medium mb-2">
             Product / Pet Name
           </label>
           <input
@@ -70,13 +70,13 @@ export default function AddProducts() {
             onChange={handleChange}
             required
             placeholder="Enter name"
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300  dark:border-gray-400  focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md"
           />
         </div>
 
         {/* Category */}
         <div className="col-span-1">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Category
           </label>
           <select
@@ -84,7 +84,7 @@ export default function AddProducts() {
             value={formData.category}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300  dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600  bg-white/60 dark:bg-gray-500 dark:bg-gray-600 backdrop-blur-md"
           >
             <option value="">Select Category</option>
             <option value="Pets (Adoption)">Pets (Adoption)</option>
@@ -96,7 +96,7 @@ export default function AddProducts() {
 
         {/* Price */}
         <div className="col-span-1">
-          <label className="block text-amber-800 font-medium mb-2">Price</label>
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">Price</label>
           <input
             type="number"
             name="price"
@@ -104,14 +104,14 @@ export default function AddProducts() {
             onChange={handleChange}
             min="0"
             placeholder="Enter price"
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 focus:outline-none focus:ring-2  focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md"
             readOnly={formData.category === "Pets"}
           />
         </div>
 
         {/* Location */}
         <div className="col-span-1">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Location
           </label>
           <input
@@ -121,13 +121,13 @@ export default function AddProducts() {
             onChange={handleChange}
             required
             placeholder="Enter location"
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md"
           />
         </div>
 
         {/* Image URL */}
         <div className="col-span-1">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Image URL
           </label>
           <input
@@ -137,13 +137,13 @@ export default function AddProducts() {
             onChange={handleChange}
             required
             placeholder="https://example.com/image.jpg"
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md"
           />
         </div>
 
         {/* Date */}
         <div className="col-span-1">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Date
           </label>
           <input
@@ -152,13 +152,13 @@ export default function AddProducts() {
             value={formData.date}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md"
           />
         </div>
 
         {/* Description */}
         <div className="col-span-2">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Description
           </label>
           <textarea
@@ -167,13 +167,13 @@ export default function AddProducts() {
             onChange={handleChange}
             required
             placeholder="Write about your pet or product..."
-            className="w-full p-3 rounded-lg border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white/60 backdrop-blur-md h-28"
+            className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md h-28"
           />
         </div>
 
         {/* Email (readonly) */}
         <div className="col-span-2">
-          <label className="block text-amber-800 font-medium mb-2">
+          <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Your Email
           </label>
           <input
@@ -182,7 +182,7 @@ export default function AddProducts() {
             Value={formData.email}
             defaultValue={user?.email}
             readOnly
-            className="w-full p-3 rounded-lg border border-amber-300 bg-gray-100 text-gray-600 cursor-not-allowed"
+            className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 bg-gray-100 dark:bg-gray-400 text-gray-600 cursor-not-allowed"
           />
         </div>
 
@@ -191,7 +191,7 @@ export default function AddProducts() {
           type="submit"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="col-span-2 py-3 px-6 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-semibold shadow-md transition-all duration-200"
+          className="col-span-2 py-3 px-6 bg-amber-500 dark:bg-gray-500 dark:hover:bg-gray-600 hover:bg-amber-600 text-white rounded-xl font-semibold shadow-md transition-all duration-200"
         >
           🐕 Submit Product
         </motion.button>

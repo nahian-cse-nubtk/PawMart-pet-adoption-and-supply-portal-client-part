@@ -71,7 +71,7 @@ const Login = () => {
             <div>
               <p className="text-red-500">{error}</p>
             </div>
-            <button className="btn bg-amber-100 mt-4">Login</button>
+            <button className="btn bg-amber-100 dark:bg-gray-500 mt-4">Login</button>
           </fieldset>
         </form>
         <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">

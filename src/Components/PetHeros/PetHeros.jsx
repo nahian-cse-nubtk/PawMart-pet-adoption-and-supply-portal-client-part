@@ -33,30 +33,31 @@ export default function PetHeroes() {
   ];
 
   return (
-    <section className="py-20 bg-linear-to-b from-white to-orange-50">
+    <section className="py-20 bg-linear-to-b from-white to-orange-50
+            dark:bg-linear-to-b dark:from-gray-700 dark:to-gray-800">
       <motion.h2
-        className="text-4xl font-bold text-center text-gray-800 mb-10"
+        className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-10"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
       >
-        🐕 Meet Our <span className="text-orange-600">Pet Heroes</span>
+        🐕 Meet Our <span className="text-orange-600 dark:text-white">Pet Heroes</span>
       </motion.h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {heroes.map((hero, i) => (
           <motion.div
             key={i}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+            className="bg-white dark:bg-gray-400 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
             whileHover={{ y: -8 }}
           >
             <img
               src={hero.img}
               alt={hero.name}
               className="w-full h-64 object-cover"
-            /> 
+            />
             <div className="p-5 text-center">
               <h3 className="text-lg font-semibold text-gray-800">{hero.name}</h3>
-              <p className="text-sm text-orange-500 font-medium mb-2">{hero.role}</p>
+              <p className="text-sm text-orange-500 dark:text-black font-medium mb-2">{hero.role}</p>
               <p className="text-sm text-gray-600 text-justify">{hero.story}</p>
             </div>
           </motion.div>

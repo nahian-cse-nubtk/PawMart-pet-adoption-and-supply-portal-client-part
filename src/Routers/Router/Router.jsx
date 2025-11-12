@@ -6,9 +6,10 @@ import FilteredCategory from "../../Components/FilteredCategory/FilteredCategory
 import Register from "../../Pages/Register/Register";
 import Login from "../../Pages/Login/Login";
 import AddProducts from "../../Pages/AddProducts/AddProducts";
-import MyProducts from "../../Components/MyProducts/MyProducts";
+import MyProducts from "../../Pages/MyProducts/MyProducts";
 import PetsAndSupplies from "../../Pages/PetsAndSupplies/PetsAndSupplies";
 import ProductDetails from "../../Components/ProductDetails/ProductDetails";
+import MyOrders from "../../Pages/MyOrders/MyOrders";
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([{
         {
             path: '/product/:productId',
             Component: ProductDetails
+        },
+        {
+            path: '/my-orders',
+            Component: MyOrders
         }
 
     ]

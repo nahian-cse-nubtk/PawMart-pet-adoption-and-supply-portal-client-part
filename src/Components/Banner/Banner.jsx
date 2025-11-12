@@ -14,6 +14,15 @@ const slides = [
     image: "https://plus.unsplash.com/premium_photo-1664300856267-710754126356?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&ixlib=rb-4.1.0&q=60&w=3000",
     tagline: "Because Every Pet Deserves Love and Care.",
   },
+  {
+    image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0",
+    tagline: "Find your forever friend — love comes with fur, paws, and a heartbeat."
+  },
+  {
+    image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0",
+    tagline: "Every adoption tells a story — make yours one of kindness and companionship."
+
+  }
 ];
 
 export default function Banner() {

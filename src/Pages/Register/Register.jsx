@@ -120,7 +120,7 @@ const Register = () => {
           <div>
             <p className="text-red-500">{error}</p>
           </div>
-          <button className="btn bg-amber-100 mt-4">Register</button>
+          <button className="btn bg-amber-100 dark:bg-gray-500 mt-4">Register</button>
 
 
         </fieldset>
