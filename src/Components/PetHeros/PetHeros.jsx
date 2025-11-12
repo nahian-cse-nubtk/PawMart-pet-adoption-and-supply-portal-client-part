@@ -43,7 +43,7 @@ export default function PetHeroes() {
         🐕 Meet Our <span className="text-orange-600 dark:text-white">Pet Heroes</span>
       </motion.h2>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:px-0 px-5 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {heroes.map((hero, i) => (
           <motion.div
             key={i}

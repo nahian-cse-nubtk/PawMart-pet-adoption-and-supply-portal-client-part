@@ -5,6 +5,8 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
 
+import Loading from "../Loading/Loading";
+
 export default function ProductDetails() {
   const { user } = useAuth();
 
@@ -35,7 +37,7 @@ export default function ProductDetails() {
 
     setTimeout(() => {
     setLoading(false);
-  }, 300);
+  }, 500);
 
     } );
   }, [axios, id, user?.displayName, user?.email]);
@@ -47,13 +49,9 @@ export default function ProductDetails() {
 
   if (loading) {
     return (
-      <>
-        <div className="flex justify-center items-center h-screen bg-amber-100">
-          <p className="text-2xl font-semibold text-amber-600 animate-pulse">
-            Loading...
-          </p>
-        </div>
-      </>
+      <div className="flex justify-center items-center my-20">
+      <Loading></Loading>
+      </div>
     );
   }
 

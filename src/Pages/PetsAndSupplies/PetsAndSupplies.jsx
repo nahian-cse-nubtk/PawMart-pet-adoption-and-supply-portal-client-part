@@ -3,6 +3,7 @@ import useAxios from "../../Hooks/useAxios";
 import Catagory from "../../Components/Catagory/Catagory";
 import { FaAngleDown } from "react-icons/fa";
 import ResultNotFound from "../../Components/ResultNotFound/ResultNotFound";
+import Loading from "../../Components/Loading/Loading";
 
 const PetsAndSupplies = () => {
   const [products, setProducts] = useState([]);
@@ -12,9 +13,13 @@ const PetsAndSupplies = () => {
   const axios = useAxios();
   const serachRef = useRef();
   useEffect(() => {
+    setLoading(true)
     axios.get("/categories").then((data) => {
       setProducts(data.data);
       setAllProduct(data.data);
+      setTimeout(()=>{
+        setLoading(false)
+      },500)
     });
 
     axios.get("/onlycategories").then((data) => {
@@ -22,16 +27,12 @@ const PetsAndSupplies = () => {
     });
   }, [axios]);
   if (loading) {
-    return (
-      <>
-        <div className="flex justify-center items-center h-screen bg-amber-100">
-          <p className="text-2xl font-semibold text-amber-600 animate-pulse">
-            Loading...
-          </p>
+      return (
+        <div className="flex justify-center items-center my-20">
+        <Loading></Loading>
         </div>
-      </>
-    );
-  }
+      );
+    }
 
   const handleFilterCategory = (category) => {
     setLoading(true);

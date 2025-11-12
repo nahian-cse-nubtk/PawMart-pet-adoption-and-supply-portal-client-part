@@ -3,9 +3,11 @@ import { Link, NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 import ThemeContext from "../../ContextAndProvider/ThemeContext";
+import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
 
 const Navbar = () => {
-  const { user,signOutUser } = useAuth();
+  const { user,signOutUser,loading } = useAuth();
   const { toggleTheme } = useContext(ThemeContext);
 
 
@@ -40,6 +42,14 @@ const Navbar = () => {
           toast('Sign Out successful')
       })
     }
+
+    if (loading) {
+        return (
+          <div className="flex justify-center items-center my-20">
+          <Loading></Loading>
+          </div>
+        );
+      }
 
   return (
     <div className="navbar text-white bg-linear-to-r from-amber-500 to-orange-600 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">

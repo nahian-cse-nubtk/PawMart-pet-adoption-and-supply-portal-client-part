@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
+import Loading from "../../Components/Loading/Loading";
 
 
 
@@ -12,11 +13,18 @@ const MyOrders = () => {
   const axios = useAxiosSecure();
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
+  const [loading,setLoading]= useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`/orders?email=${user?.email}`)
-      .then((data) => setOrders(data.data));
+      .then((data) =>{
+        setOrders(data.data)
+        setTimeout(()=>{
+          setLoading(false);
+        },500)
+      } );
   }, [axios, user?.email]);
 
 
@@ -44,7 +52,13 @@ const MyOrders = () => {
     doc.save("PawMart_Report.pdf");
   };
 
-
+if (loading) {
+    return (
+      <div className="flex justify-center items-center my-20">
+      <Loading></Loading>
+      </div>
+    );
+  }
 
 
   return (

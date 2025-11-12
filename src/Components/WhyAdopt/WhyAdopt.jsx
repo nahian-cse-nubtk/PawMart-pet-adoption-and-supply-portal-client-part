@@ -41,7 +41,7 @@ export default function WhyAdopt() {
         Instead of buying, rescue a pet in need. Each adoption story creates a ripple of kindness — one tail wag, one heart healed at a time.
       </motion.p>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 md:px-0 px-5 gap-8 max-w-6xl mx-auto">
         {reasons.map((item, index) => (
           <motion.div
             key={index}

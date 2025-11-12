@@ -6,11 +6,14 @@ import { MdDelete } from "react-icons/md";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import Loading from "../../Components/Loading/Loading";
+
 
 const MyProducts = () => {
   const axios = useAxiosSecure();
   const { user } = useAuth();
   const [products, setProducts] = useState([]);
+  const [loading, setLoading]= useState(false);
 
   const modalRef = useRef();
 
@@ -18,10 +21,17 @@ const MyProducts = () => {
   const [id, setId] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/categories?email=${user?.email}`)
-      .then((data) => setProducts(data.data));
+    setLoading(true);
+    axios.get(`http://localhost:5000/categories?email=${user?.email}`)
+      .then((data) =>{
+        setProducts(data.data)
+        setTimeout(()=>{
+          setLoading(false);
+        },500)
+
+      } );
   }, [axios, user?.email]);
+
 
   const handleEditButton = (id) => {
     axios.get(`/categories/${id}`).then((data) => {
@@ -60,7 +70,13 @@ const MyProducts = () => {
       }
     });
   };
-
+if (loading) {
+    return (
+      <div className="flex justify-center items-center my-20">
+      <Loading></Loading>
+      </div>
+    );
+  }
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -91,6 +107,9 @@ const MyProducts = () => {
     });
 
   };
+
+
+
   return (
     <>
       <div className="overflow-x-auto">
