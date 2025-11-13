@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import Loading from "../../Components/Loading/Loading";
+import ProductAddRequest from "../../Components/ProductAddRequest/ProductAddRequest";
 
 
 const MyProducts = () => {
@@ -25,13 +26,14 @@ const MyProducts = () => {
     axios.get(`/categories/email?email=${user?.email}`)
       .then((data) =>{
         setProducts(data.data)
-        setTimeout(()=>{
-          setLoading(false);
-        },500)
+
 
       } );
   }, [axios, user?.email]);
 
+  setTimeout(()=>{
+          setLoading(false);
+        },500)
 
   const handleEditButton = (id) => {
     axios.get(`/categories/${id}`).then((data) => {
@@ -113,6 +115,9 @@ if (loading) {
   return (
     <>
       <div className="overflow-x-auto">
+        <div>
+          {products.length===0&&<ProductAddRequest/>}
+        </div>
         <table className="table">
           {/* head */}
           <thead>
@@ -126,7 +131,8 @@ if (loading) {
           </thead>
           <tbody>
             {/* row 1 */}
-            {products.map((product) => (
+            {
+            products.length!==0&&products.map((product) => (
               <tr>
                 <td>
                   <div className="flex items-center gap-3">

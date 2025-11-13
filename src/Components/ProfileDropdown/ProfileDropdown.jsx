@@ -8,7 +8,7 @@ export default function ProfileDropdown() {
   const [open, setOpen] = useState(false);
 
   const {user,signOutUser} = useAuth();
-  console.log(user.photoURL);
+  console.log(user);
 
   const handleSignOut =()=>{
     signOutUser()
@@ -22,7 +22,7 @@ export default function ProfileDropdown() {
   return (
     <>
         {/* Profile Avatar */}
-        <div className="relative">
+        <div className="relative w-11 h-11">
           <button
             onClick={() => setOpen(!open)}
             className="relative group focus:outline-none"

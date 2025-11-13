@@ -84,7 +84,7 @@ export default function AddProducts() {
             value={formData.category}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded-lg border border-amber-300  dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600  bg-white/60 dark:bg-gray-500 dark:bg-gray-600 backdrop-blur-md"
+            className="w-full p-3 rounded-lg border border-amber-300  dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-gray-600  bg-white/60  dark:bg-gray-600 backdrop-blur-md"
           >
             <option value="">Select Category</option>
             <option value="Pets (Adoption)">Pets (Adoption)</option>

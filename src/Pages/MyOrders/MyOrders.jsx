@@ -6,28 +6,32 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
 import Loading from "../../Components/Loading/Loading";
+import OrderRquest from "../../Components/OrderRequest/OrderRquest";
 
 
 
 const MyOrders = () => {
   const axios = useAxiosSecure();
   const { user } = useAuth();
+
   const [orders, setOrders] = useState([]);
   const [loading,setLoading]= useState(false);
 
   useEffect(() => {
+
     setLoading(true);
     axios
       .get(`/orders?email=${user?.email}`)
       .then((data) =>{
 
         setOrders(data.data)
-        setTimeout(()=>{
+
+
+      } );
+  }, [axios, user, user?.email]);
+setTimeout(()=>{
           setLoading(false);
         },500)
-      } );
-  }, [axios, user?.email]);
-
 
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
@@ -72,6 +76,11 @@ if (loading) {
           🧾 Download Report
         </button>
       </div>
+      <div>
+        {
+          orders.length===0&&<OrderRquest></OrderRquest>
+        }
+      </div>
       <table className="table">
         {/* head */}
         <thead>
@@ -86,7 +95,9 @@ if (loading) {
           </tr>
         </thead>
         <tbody>
-          {orders.map((order) => (
+          {
+
+          orders.length!==0&&orders.map((order) => (
             <tr key={order._id}>
               <td>{order.productName}</td>
               <td>{order.buyerName}</td>

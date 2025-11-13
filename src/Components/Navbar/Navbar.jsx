@@ -53,7 +53,7 @@ const Navbar = () => {
       }
 
   return (
-    <div className="navbar text-white bg-linear-to-r from-amber-500 to-orange-600 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">
+    <div className="navbar md:px-10 text-white bg-linear-to-r from-amber-500 to-orange-600 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -122,12 +122,12 @@ const Navbar = () => {
           {user ? (
             <div className="flex item-center space-x-1">
             <ProfileDropdown />
-            <button className="hover:text-gray-500" onClick={handleSignOut}>LogOut</button>
+            <button className="hover:text-gray-500 ml-2" onClick={handleSignOut}>LogOut</button>
             </div>
           ) : (
             <div className="sapce-x-2">
-              <Link to="/register">Register</Link>
-              <Link to="/login">Login</Link>
+              <Link to="/register" className="">Register</Link>
+              <Link to="/login" className="ml-2">Login</Link>
             </div>
           )}
           </div>

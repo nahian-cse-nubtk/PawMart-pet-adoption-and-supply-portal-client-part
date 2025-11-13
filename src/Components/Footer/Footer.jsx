@@ -18,7 +18,7 @@ const Footer = () => {
           <p className="text-gray-700 dark:text-gray-100 leading-relaxed text-sm">
             <Typewriter
                     words={[
-                        "PawMart connects local pet owners and buyers for adoption and pet care products.We believe every pet deserves love, care, and a happy home. 🐶🐱"
+                        "PawMart connects local pet owners and buyers for adoption and pet care products.We believe every pet deserves love and care."
                       ]}
                       loop={0}
                       cursor
@@ -71,7 +71,7 @@ const Footer = () => {
       {/* <div className="border-t border-amber-300 dark:border-gray-300 my-4"></div> */}
 
       {/* Copyright */}
-      <div className="text-center text-sm text-gray-700 dark:text-gray-100 mt-5">
+      <div className="text-center text-sm text-gray-700 dark:text-gray-100 my-5">
         © {new Date().getFullYear()} <span className="font-semibold text-orange-800 dark:text-gray-100">PawMart</span>.
         All rights reserved. Made with ❤️ for pets.
       </div>
