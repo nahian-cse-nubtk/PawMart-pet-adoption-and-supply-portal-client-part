@@ -1,6 +1,7 @@
 import React from "react";
 import { PawPrint, Facebook, Instagram, Twitter } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router";
 
 
 const Footer = () => {
@@ -39,13 +40,13 @@ const Footer = () => {
           <h3 className="font-semibold text-lg text-orange-800 dark:text-gray-100 mb-3">Useful Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-orange-700 dark:hover:text-gray-200 transition">Home</a>
+              <Link to="/" className="hover:text-orange-700 dark:hover:text-gray-200 transition">Home</Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-orange-700 transition">Contact</a>
+              <Link to='/'  className="hover:text-orange-700 transition">Contact</Link>
             </li>
             <li>
-              <a href="/terms" className="hover:text-orange-700 transition">Terms & Conditions</a>
+              <Link to='/' className="hover:text-orange-700 transition">Terms & Conditions</Link>
             </li>
           </ul>
         </div>

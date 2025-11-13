@@ -8,7 +8,7 @@ export default function ProfileDropdown() {
   const [open, setOpen] = useState(false);
 
   const { user, signOutUser } = useAuth();
-  console.log(user);
+  //console.log(user);
 
   const handleSignOut = () => {
     signOutUser().then(() => {

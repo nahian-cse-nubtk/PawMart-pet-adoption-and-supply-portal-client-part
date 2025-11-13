@@ -122,7 +122,7 @@ const Navbar = () => {
           {user ? (
             <div className="flex item-center space-x-1">
             <ProfileDropdown />
-            <button className="hover:text-gray-500 ml-2" onClick={handleSignOut}>LogOut</button>
+            <button className="hover:text-gray-500 hidden md:inline-block ml-2" onClick={handleSignOut}>LogOut</button>
             </div>
           ) : (
             <div className="sapce-x-2">

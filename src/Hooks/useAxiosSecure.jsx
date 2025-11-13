@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import useAuth from './useAuth';
+import { useNavigate } from 'react-router';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000/'
+    baseURL: 'https://pawmart-pet-adoption-and-supply.vercel.app/'
 
 })
 
 const useAxiosSecure = () => {
-    const {user}= useAuth();
+    const {user,signOutUser}= useAuth();
+    const navigate = useNavigate();
     useEffect(()=>{
         const requestInterceptor = instance.interceptors.request.use((config)=>{
             config.headers.authorization=`Bearer ${user.accessToken}`;
@@ -17,7 +19,13 @@ const useAxiosSecure = () => {
         const responseInterceptor = instance.interceptors.response.use((res)=>{
             return res;
         },(error)=>{
-            console.log(error.status)
+            if(error.status===401||error.status===403){
+                signOutUser
+                .then(()=>{
+                    navigate('/login')
+                })
+
+            }
 
         })
         return ()=>{

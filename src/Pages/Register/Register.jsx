@@ -24,7 +24,7 @@ const Register = () => {
 
 
         const profile ={displayName: name, photoURL: photoUrl}
-        console.log(profile);
+        //console.log(profile);
 
 
         if(!uppercaseRegex.test(password)){
@@ -55,7 +55,7 @@ const Register = () => {
                 navigate(location.state||'/')
               })
               .catch(error=>{
-                console.log(error);
+                //console.log(error);
               })
             }
             }

@@ -36,7 +36,9 @@ const MyProducts = () => {
         },500)
 
   const handleEditButton = (id) => {
-    axios.get(`/categories/${id}`).then((data) => {
+
+    axios.get(`/categories/category/${id}`).then((data) => {
+      //console.log(data);
       setId(data.data._id);
       setFormData({
         name: data.data.name,
@@ -67,8 +69,12 @@ const MyProducts = () => {
     axios.patch(`/categories/${id}`, formData).then((data) => {
       if (data.data.matchedCount) {
         toast("Update Successful");
+        const filteredData =products.filter(product=>product._id!==id)
+        formData._id = id;
+        setProducts([...filteredData,formData])
         modalRef.current.close();
-        window.location.reload();
+
+
       }
     });
   };

@@ -21,7 +21,7 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth,GoogleProvider)
     }
     const profileUpdate =(currentUser,profile)=>{
-        console.log(profile);
+        //console.log(profile);
         return updateProfile(currentUser,profile);
     }
 

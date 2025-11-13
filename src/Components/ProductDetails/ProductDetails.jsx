@@ -62,7 +62,7 @@ export default function ProductDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Order Submitted:", formData);
+    //console.log("Order Submitted:", formData);
     axios.post('/orders', formData)
     .then(data=>{
         if(data.data.insertedId){

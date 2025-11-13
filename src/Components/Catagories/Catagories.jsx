@@ -38,7 +38,7 @@ const Catagories = () => {
                                   />
 
                 </p>
-            <div className=' flex justify-center gap-2 my-5'>
+            <div className=' flex flex-col md:flex-row items-center justify-center gap-2 my-5'>
                 {
                     categories.map(category=><Link to={`/categories/${category}`}><button className="btn btn-soft btn-primary">{category}</button></Link>)
                 }

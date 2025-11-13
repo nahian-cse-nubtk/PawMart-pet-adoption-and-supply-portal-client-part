@@ -37,6 +37,8 @@ export default function AddProducts() {
 
         if(data.data.insertedId){
             toast("Your Product/pet is added to the list")
+            window.location.reload();
+
         }
     })
 
@@ -59,7 +61,7 @@ export default function AddProducts() {
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
         {/* Product / Pet Name */}
-        <div className="col-span-1">
+        <div className="col-span-3 md:col-span-1">
           <label className="block text-amber-800  dark:text-gray-200 font-medium mb-2">
             Product / Pet Name
           </label>
@@ -75,7 +77,7 @@ export default function AddProducts() {
         </div>
 
         {/* Category */}
-        <div className="col-span-1">
+        <div className="col-span-3 md:col-span-1">
           <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Category
           </label>
@@ -95,7 +97,7 @@ export default function AddProducts() {
         </div>
 
         {/* Price */}
-        <div className="col-span-1">
+        <div className="col-span-3 md:col-span-1">
           <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">Price</label>
           <input
             type="number"
@@ -105,12 +107,12 @@ export default function AddProducts() {
             min="0"
             placeholder="Enter price"
             className="w-full p-3 rounded-lg border border-amber-300 dark:border-gray-400 focus:outline-none focus:ring-2  focus:ring-amber-500 dark:focus:ring-gray-600 bg-white/60 dark:bg-gray-500 backdrop-blur-md"
-            readOnly={formData.category === "Pets"}
+            readOnly={formData.category === "Pets (Adoption)"}
           />
         </div>
 
         {/* Location */}
-        <div className="col-span-1">
+        <div className="col-span-3 md:col-span-1">
           <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Location
           </label>
@@ -126,7 +128,7 @@ export default function AddProducts() {
         </div>
 
         {/* Image URL */}
-        <div className="col-span-1">
+        <div className="col-span-3 md:col-span-1">
           <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Image URL
           </label>
@@ -142,7 +144,7 @@ export default function AddProducts() {
         </div>
 
         {/* Date */}
-        <div className="col-span-1">
+        <div className="col-span-3 md:col-span-1">
           <label className="block text-amber-800 dark:text-gray-200 font-medium mb-2">
             Date
           </label>

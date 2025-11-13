@@ -3,17 +3,19 @@ import useAuth from '../../Hooks/useAuth';
 import { Navigate, useLocation } from 'react-router';
 
 const PrivateRouter = ({children}) => {
-    
+   
+
     const {user,loading}=useAuth();
     const location = useLocation();
 
     if(loading){
+
         return;
     }
     if(user){
         return children;
     }
-    <Navigate to='/login' state={location.pathname}></Navigate>
+    return <Navigate to='/login' state={location.pathname}></Navigate>
 
 };
 
