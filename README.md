@@ -1,6 +1,6 @@
 # 🐾 PawMart – Your One-Stop Pet Marketplace
 
-**Live Site:** [https://pawmart-client.vercel.app](https://pawmart-client.vercel.app)
+**Live Site:** [https://pawmart-pet-adoption-supply.web.app](https://pawmart-pet-adoption-supply.web.app)
 
 PawMart is a **community-driven pet marketplace** where pet owners, breeders, and pet shops come together to **adopt, sell, and buy pets or pet-related products**. Whether you're looking to adopt a furry friend or shop for quality pet accessories, PawMart connects you with a trusted pet-loving community.
 
@@ -35,4 +35,4 @@ PawMart is a **community-driven pet marketplace** where pet owners, breeders, an
 
 1. Clone this repository
    ```bash
-   git clone https://github.com/your-username/pawmart.git
+   git clone https://github.com/nahian-cse-nubtk/PawMart-pet-adoption-and-supply-portal-client-part.git

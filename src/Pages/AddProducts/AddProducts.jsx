@@ -37,10 +37,14 @@ export default function AddProducts() {
 
         if(data.data.insertedId){
             toast("Your Product/pet is added to the list")
-            window.location.reload();
 
         }
     })
+
+
+    setTimeout(()=>{
+      window.location.reload();
+    },4000)
 
 
   };
