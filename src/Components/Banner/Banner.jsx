@@ -61,13 +61,7 @@ export default function Banner() {
         >
           {slides[index].tagline}
         </motion.h1>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-orange-600 transition"
-        >
-          Adopt Now
-        </motion.button>
+        
       </div>
 
       {/* Dots indicator */}
