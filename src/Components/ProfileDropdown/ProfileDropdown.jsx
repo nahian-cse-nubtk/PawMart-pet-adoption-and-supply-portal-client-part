@@ -55,8 +55,14 @@ export default function ProfileDropdown() {
               {/* User Info */}
               <div className="flex items-center gap-3 px-4 py-3 border-b border-white/20">
                 <img
-                  src={user?.photoURL}
-                  alt="Profile"
+                  src={
+                user?.photoURL
+                  ? `https://images.weserv.nl/?url=${encodeURIComponent(
+                      user.photoURL
+                    )}`
+                  : avatar
+              }
+              alt="User Avatar"
                   className="w-10 h-10 rounded-full ring-2 ring-white/30"
                 />
                 <div>

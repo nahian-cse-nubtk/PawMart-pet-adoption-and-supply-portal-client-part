@@ -13,9 +13,7 @@ const Catagory = ({product}) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{product.name}</h2>
-        <p>
-        {product.description}
-        </p>
+        
         <p><span className="font-bold">Category:</span> {product.category}</p>
         <p><span className="font-bold">Location:</span> {product.location}</p>
         <p><span className="font-bold">Price:</span> ${product.price}</p>
