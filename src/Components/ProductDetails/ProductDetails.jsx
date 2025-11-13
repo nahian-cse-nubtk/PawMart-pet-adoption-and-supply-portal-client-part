@@ -49,7 +49,7 @@ export default function ProductDetails() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center my-20">
+      <div>
       <Loading></Loading>
       </div>
     );

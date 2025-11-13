@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Catagory from '../Catagory/Catagory';
 import useAxios from '../../Hooks/useAxios';
 import { Link } from 'react-router';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Catagories = () => {
 
@@ -20,7 +21,23 @@ const Catagories = () => {
     return (
         <div>
             <h1 className='font-bold text-4xl text-center'>All Catagories Here</h1>
-            <p className='text-center text-xl my-2'>Select a category from below</p>
+            <p className='text-center text-xl my-2'>
+                <Typewriter
+                                    words={[
+                                        "Select a category from below"
+                                      ]}
+                                      loop={0}
+                                      cursor
+                                      cursorStyle="|"
+                                      typeSpeed={70}
+                                      deleteSpeed={40}
+                                      delaySpeed={2000}
+
+
+
+                                  />
+
+                </p>
             <div className=' flex justify-center gap-2 my-5'>
                 {
                     categories.map(category=><Link to={`/categories/${category}`}><button className="btn btn-soft btn-primary">{category}</button></Link>)

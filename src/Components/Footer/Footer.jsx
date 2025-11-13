@@ -1,5 +1,6 @@
 import React from "react";
 import { PawPrint, Facebook, Instagram, Twitter } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 
 const Footer = () => {
@@ -15,8 +16,21 @@ const Footer = () => {
             <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">PawMart</h2>
           </div>
           <p className="text-gray-700 dark:text-gray-100 leading-relaxed text-sm">
-            PawMart connects local pet owners and buyers for adoption and pet care products.
-            We believe every pet deserves love, care, and a happy home. 🐶🐱
+            <Typewriter
+                    words={[
+                        "PawMart connects local pet owners and buyers for adoption and pet care products.We believe every pet deserves love, care, and a happy home. 🐶🐱"
+                      ]}
+                      loop={0}
+                      cursor
+                      cursorStyle="|"
+                      typeSpeed={70}
+                      deleteSpeed={40}
+                      delaySpeed={2000}
+
+
+
+                  />
+
           </p>
         </div>
 
@@ -54,10 +68,10 @@ const Footer = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-amber-300 dark:border-gray-300 my-8"></div>
+      {/* <div className="border-t border-amber-300 dark:border-gray-300 my-4"></div> */}
 
       {/* Copyright */}
-      <div className="text-center text-sm text-gray-700 dark:text-gray-100">
+      <div className="text-center text-sm text-gray-700 dark:text-gray-100 mt-5">
         © {new Date().getFullYear()} <span className="font-semibold text-orange-800 dark:text-gray-100">PawMart</span>.
         All rights reserved. Made with ❤️ for pets.
       </div>

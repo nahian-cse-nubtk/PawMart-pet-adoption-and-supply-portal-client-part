@@ -20,6 +20,7 @@ const MyOrders = () => {
     axios
       .get(`/orders?email=${user?.email}`)
       .then((data) =>{
+
         setOrders(data.data)
         setTimeout(()=>{
           setLoading(false);
@@ -54,7 +55,7 @@ const MyOrders = () => {
 
 if (loading) {
     return (
-      <div className="flex justify-center items-center my-20">
+      <div >
       <Loading></Loading>
       </div>
     );

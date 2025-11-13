@@ -22,7 +22,7 @@ const MyProducts = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5000/categories?email=${user?.email}`)
+    axios.get(`/categories/email?email=${user?.email}`)
       .then((data) =>{
         setProducts(data.data)
         setTimeout(()=>{
@@ -72,7 +72,7 @@ const MyProducts = () => {
   };
 if (loading) {
     return (
-      <div className="flex justify-center items-center my-20">
+      <div>
       <Loading></Loading>
       </div>
     );

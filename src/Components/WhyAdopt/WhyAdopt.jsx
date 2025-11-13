@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, PawPrint, Home, Smile } from "lucide-react";
-
+import { Typewriter } from "react-simple-typewriter";
 export default function WhyAdopt() {
   const reasons = [
     {
@@ -38,8 +38,26 @@ export default function WhyAdopt() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        Instead of buying, rescue a pet in need. Each adoption story creates a ripple of kindness — one tail wag, one heart healed at a time.
+        <Typewriter
+        words={[
+            "Instead of buying, rescue a pet in need.",
+            "Each adoption story creates a ripple of kindness — one tail wag,",
+            "one heart healed at a time."
+          ]}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={70}
+          deleteSpeed={40}
+          delaySpeed={2000}
+
+
+
+      />
+
+
       </motion.p>
+
 
       <div className="grid md:grid-cols-3 md:px-0 px-5 gap-8 max-w-6xl mx-auto">
         {reasons.map((item, index) => (

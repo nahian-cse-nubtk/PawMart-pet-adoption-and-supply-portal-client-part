@@ -59,9 +59,10 @@ export default function Banner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          
           {slides[index].tagline}
         </motion.h1>
-        
+
       </div>
 
       {/* Dots indicator */}

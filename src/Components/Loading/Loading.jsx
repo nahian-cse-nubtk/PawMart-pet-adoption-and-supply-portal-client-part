@@ -18,6 +18,11 @@ const Loading = () => {
 }
 
 const StyledWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
   .loader {
     position: relative;
     width: 200px;
@@ -26,7 +31,7 @@ const StyledWrapper = styled.div`
     /* smooth background */
     background: radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.05) 30%,
+      rgba(255, 255, 255, 0.1) 30%,
       transparent 70%
     );
     overflow: hidden;
