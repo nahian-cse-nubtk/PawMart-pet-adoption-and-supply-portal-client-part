@@ -89,7 +89,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <div className="font-bold flex items-center gap-3 space-x-1">
+        <div className="font-bold flex flex-col-reverse md:flex-row items-center gap-3 space-x-1">
           <div >
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
