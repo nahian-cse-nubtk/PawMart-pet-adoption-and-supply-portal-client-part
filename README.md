@@ -36,3 +36,17 @@ PawMart is a **community-driven pet marketplace** where pet owners, breeders, an
 1. Clone this repository
    ```bash
    git clone https://github.com/nahian-cse-nubtk/PawMart-pet-adoption-and-supply-portal-client-part.git
+
+2. Open a New Terminal & Go to Client Folder
+cd client
+
+3. Install Dependencies
+npm install
+
+4. Start the React App
+npm run dev
+
+✔️ Project will be Running At
+
+React App: http://localhost:3000
+
