@@ -10,22 +10,24 @@ const PetsAndSupplies = () => {
   const [allProduct, setAllProduct] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [totalData, setTotalData] =useState(0)
   const axios = useAxios();
   const serachRef = useRef();
   useEffect(() => {
     setLoading(true)
-    axios.get("/categories").then((data) => {
-      setProducts(data.data);
-      setAllProduct(data.data);
+    axios.get(`/categories?limit=${8}&skip=0`).then((data) => {
+      setProducts(data.data.result);
+      setAllProduct(data.data.result);
+      setTotalData(data.data.total)
       setTimeout(()=>{
         setLoading(false)
       },500)
     });
-
+    console.log(totalData)
     axios.get("/onlycategories").then((data) => {
       setCategories(data.data);
     });
-  }, [axios]);
+  }, [axios, totalData]);
   if (loading) {
       return (
         <div>
@@ -72,7 +74,7 @@ const PetsAndSupplies = () => {
       </h1>
       <div className="flex justify-end">
         <div className="dropdown dropdown-bottom dropdown-end">
-          <div tabIndex={0} role="button" className="btn m-1">
+          <div tabIndex={0} role="button" className="btn bg-amber-100 dark:bg-gray-400 hover:bg-amber-200 dark:hover:bg-gray-300 m-1">
             Filter By Category <FaAngleDown />
           </div>
           <ul

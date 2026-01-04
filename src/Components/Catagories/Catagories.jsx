@@ -40,7 +40,7 @@ const Catagories = () => {
                 </p>
             <div className=' flex flex-col md:flex-row items-center justify-center gap-2 my-5'>
                 {
-                    categories.map(category=><Link to={`/categories/${category}`}><button className="btn btn-soft btn-primary">{category}</button></Link>)
+                    categories.map(category=><Link to={`/categories/${category}`}><button className="btn bg-amber-50 dark:bg-gray-400 hover:bg-amber-200 dark:hover:bg-gray-300">{category}</button></Link>)
                 }
 
 

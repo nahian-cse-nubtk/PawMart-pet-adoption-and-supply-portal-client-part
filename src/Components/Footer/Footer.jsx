@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-     <footer className="bg-linear-to-r from-amber-200 via-amber-300 to-amber-400
+     <footer className="bg-linear-to-r from-amber-200 via-amber-250 to-amber-300
             dark:bg-linear-to-r dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100 py-10">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 items-start">
 

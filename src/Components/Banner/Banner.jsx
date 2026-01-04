@@ -36,7 +36,7 @@ export default function Banner() {
   }, []);
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden rounded-2xl shadow-lg">
+    <div className="relative w-full h-[70vh] overflow-hidden rounded-2xl shadow-lg">
       <AnimatePresence mode="wait">
         <motion.img
           key={slides[index].image}

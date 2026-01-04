@@ -33,8 +33,7 @@ export default function PetHeroes() {
   ];
 
   return (
-    <section className="py-20 bg-linear-to-b from-white to-orange-50
-            dark:bg-linear-to-b dark:from-gray-700 dark:to-gray-800">
+    <section className="py-20 ">
       <motion.h2
         className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-10"
         initial={{ opacity: 0, y: -20 }}
@@ -43,7 +42,7 @@ export default function PetHeroes() {
         🐕 Meet Our <span className="text-orange-600 dark:text-white">Pet Heroes</span>
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:px-0 px-5 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:px-0 px-5 md:grid-cols-3 lg:grid-cols-4 gap-8  mx-auto">
         {heroes.map((hero, i) => (
           <motion.div
             key={i}

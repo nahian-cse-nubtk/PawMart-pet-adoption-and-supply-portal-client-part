@@ -10,7 +10,7 @@ const RecentProducts = () => {
         .then(data=>setProducts(data.data))
     },[axios])
     return (
-        <div className='py-5'>
+        <div className=''>
             <h1 className='text-center font-bold my-10 text-4xl'>Recent Products</h1>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-5'>
                 {

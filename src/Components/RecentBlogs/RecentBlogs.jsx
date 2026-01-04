@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import styled from "styled-components";
 
 const blogs = [
@@ -29,40 +30,14 @@ const blogs = [
     image:
       "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
   },
-  {
-    id: 4,
-    title: "How Proper Nutrition Impacts Your Pet’s Health",
-    category: "Pet Care",
-    description:
-      "A balanced and nutritious diet is the foundation of a healthy pet. Feeding your pet high-quality food tailored to their age, size, and breed helps maintain strong bones, a shiny coat, and a healthy immune system. Poor nutrition can lead to obesity, allergies, and long-term health issues. Along with nutritious food, using proper feeding accessories like slow-feed bowls and clean water dispensers can significantly improve digestion and overall wellbeing.",
-    image:
-      "https://images.unsplash.com/photo-1592194996308-7b43878e84a6",
-  },
-  {
-    id: 5,
-    title: "Keeping Your Pet Active with the Right Toys",
-    category: "Pet Accessories",
-    description:
-      "Physical activity and mental stimulation are essential for a pet’s happiness. Toys help prevent boredom, reduce anxiety, and encourage healthy exercise. Interactive toys, chew toys, and puzzle feeders keep pets engaged and mentally sharp. Regular playtime strengthens the bond between you and your pet while also preventing destructive behavior. Choosing safe, durable toys suited to your pet’s size ensures long-lasting fun and wellbeing.",
-    image:
-      "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
-  },
-  {
-    id: 6,
-    title: "Creating a Long-Lasting Bond with Your Adopted Pet",
-    category: "Pet Lifestyle",
-    description:
-      "Building a strong bond with your adopted pet takes time, patience, and understanding. Spend quality time together through play, training, and daily routines. Positive reinforcement, gentle communication, and consistency help build trust. Using comfort-focused accessories like cozy beds, calming toys, and grooming tools enhances your pet’s emotional wellbeing. Over time, this bond grows into a deep, lifelong companionship filled with love and joy.",
-    image:
-      "https://longwoodvetcenter.com/wp-content/uploads/2023/01/Naturally-Healthy-Pet.jpg",
-  },
+
 ];
 
-const PetBlog = () => {
+const RecentBlogs = () => {
   return (
-    <Wrapper className="py-10">
+    <Wrapper>
       <Header>
-        <h2 className="text-center font-bold  text-4xl">Pet Blogs</h2>
+        <h2 className="text-center font-bold  text-4xl">Recent Blog</h2>
         <p>Guides, tips, and stories to help you care for your furry friends</p>
       </Header>
 
@@ -80,13 +55,14 @@ const PetBlog = () => {
           </BlogCard>
         ))}
       </BlogGrid>
-
+      <div className="flex justify-center py-5">
+        <Link to="/blogs" className="btn bg-amber-50 dark:bg-gray-400 hover:bg-amber-200 dark:hover:bg-gray-300">All Blog</Link>
+      </div>
 
     </Wrapper>
   );
 };
 const Wrapper = styled.section`
-
   ;
 
 `;
@@ -135,7 +111,7 @@ const BlogCard = styled.div`
 
 
     font-size: 0.75rem;
-
+    
     border-radius: 20px;
     margin-bottom: 12px;
   }
@@ -167,4 +143,4 @@ const BlogCard = styled.div`
   }
 `;
 
-export default PetBlog;
+export default RecentBlogs;

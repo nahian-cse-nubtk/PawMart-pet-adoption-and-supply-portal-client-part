@@ -21,8 +21,7 @@ export default function WhyAdopt() {
   ];
 
   return (
-    <section className="py-20 bg-linear-to-b from-orange-50 to-orange-200
-            dark:bg-linear-to-b dark:from-gray-900 dark:to-gray-700 text-center">
+    <section className="text-center ">
       <motion.h2
         className="text-4xl font-bold text-gray-800 dark:text-white mb-6"
         initial={{ opacity: 0, y: -20 }}
@@ -59,11 +58,11 @@ export default function WhyAdopt() {
       </motion.p>
 
 
-      <div className="grid md:grid-cols-3 md:px-0 px-5 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 md:px-0 px-5 gap-8  mx-auto">
         {reasons.map((item, index) => (
           <motion.div
             key={index}
-            className="p-8 bg-white dark:bg-gray-400 shadow-lg rounded-2xl hover:shadow-xl transition-all border border-orange-100"
+            className="p-8 bg-amber-100 dark:bg-gray-700 shadow-lg rounded-2xl hover:shadow-xl transition-all border border-orange-100"
             whileHover={{ scale: 1.05 }}
           >
             <div className="flex justify-center mb-4">{item.icon}</div>

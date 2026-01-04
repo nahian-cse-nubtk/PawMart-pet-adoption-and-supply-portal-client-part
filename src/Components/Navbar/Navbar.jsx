@@ -56,7 +56,7 @@ const Navbar = () => {
       }
 
   return (
-    <div className="navbar sticky top-0 z-50 md:px-20 text-white bg-linear-to-r from-amber-500 to-orange-600 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">
+    <div className="navbar sticky top-0 z-50 md:px-20 text-black dark:text-white bg-linear-to-r from-amber-100 to-amber-200 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -85,7 +85,7 @@ const Navbar = () => {
         </div>
         <h1 className="text-2xl font-bold tracking-wide flex items-center gap-1">
           🐾{" "}
-          <span className="font-extrabold text-white drop-shadow">PawMart</span>
+          <span className="font-extrabold text-black dark:text-white drop-shadow">PawMart</span>
         </h1>
       </div>
       <div className="navbar-center hidden lg:flex">
