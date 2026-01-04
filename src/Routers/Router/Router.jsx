@@ -15,6 +15,7 @@ import Error404page from "../../Components/Error404page/Error404page";
 import ProductNotFound from "../../Components/ProductNotFound/ProductNotFound";
 import PetBlog from "../../Pages/Blog/PetBlog";
 import DashboardLayout from "../../Pages/dashboard/DashboardLayout/DashboardLayout";
+import Profile from "../../Pages/dashboard/Pages/Profile";
 
 
 
@@ -69,7 +70,26 @@ const router = createBrowserRouter([{
 },
 {
     path: '/dashboard',
-    element: <PrivateRouter><DashboardLayout></DashboardLayout></PrivateRouter>
+    element: <PrivateRouter><DashboardLayout></DashboardLayout></PrivateRouter>,
+    children:[
+        {
+            path:"profile",
+            element: <PrivateRouter><Profile></Profile></PrivateRouter>
+
+        },
+        {
+            path:'myProduct',
+            element: <PrivateRouter><MyProducts></MyProducts></PrivateRouter>
+        },
+        {
+            path: 'myOrder',
+            element: <PrivateRouter><MyOrders></MyOrders></PrivateRouter>
+        },
+        {
+            path: 'addProduct',
+            element: <PrivateRouter><AddProducts></AddProducts></PrivateRouter>
+        }
+    ]
 
 },
 {
