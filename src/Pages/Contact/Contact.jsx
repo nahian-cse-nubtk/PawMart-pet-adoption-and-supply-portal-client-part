@@ -2,23 +2,23 @@
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-green-50 px-4 py-10">
+    <div className="min-h-screen  px-4 py-10">
       {/* Header Section */}
       <div className="max-w-5xl mx-auto text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800 mb-3">
+        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-3">
           Contact Us 🐾
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-white max-w-2xl mx-auto">
           Have questions about pet adoption, supplies, or need help choosing the
           right companion? We’re here to help you every step of the way ❤️
         </p>
       </div>
 
       {/* Content Grid */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-1  gap-8">
         {/* Contact Info */}
-        <div className="bg-white rounded-2xl shadow-md p-6 space-y-5">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        <div className="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 space-y-5">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 dark:text-white">
             Get in Touch
           </h2>
 
@@ -27,8 +27,8 @@ const Contact = () => {
               📍
             </div>
             <div>
-              <p className="font-semibold text-gray-700">Our Location</p>
-              <p className="text-sm text-gray-500">
+              <p className="font-semibold text-gray-700 dark:text-white">Our Location</p>
+              <p className="text-sm text-gray-500 dark:text-white">
                 Dhaka, Bangladesh
               </p>
             </div>
@@ -39,8 +39,8 @@ const Contact = () => {
               📞
             </div>
             <div>
-              <p className="font-semibold text-gray-700">Phone</p>
-              <p className="text-sm text-gray-500">
+              <p className="font-semibold text-gray-700 dark:text-white">Phone</p>
+              <p className="text-sm text-gray-500 dark:text-white">
                 +880 1234 567 890
               </p>
             </div>
@@ -51,55 +51,21 @@ const Contact = () => {
               ✉️
             </div>
             <div>
-              <p className="font-semibold text-gray-700">Email</p>
-              <p className="text-sm text-gray-500">
+              <p className="font-semibold text-gray-700 dark:text-white">Email</p>
+              <p className="text-sm text-gray-500 dark:text-white">
                 support@petadoption.com
               </p>
             </div>
           </div>
 
-          <div className="mt-6 text-sm text-gray-600">
+          <div className="mt-6 text-sm text-gray-600 dark:text-white">
             🐶 Our team responds within 24 hours.
             Your pet’s happiness is our priority.
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white rounded-2xl shadow-md p-6">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            Send Us a Message
-          </h2>
 
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="input input-bordered w-full rounded-xl"
-              required
-            />
-
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="input input-bordered w-full rounded-xl"
-              required
-            />
-
-            <textarea
-              rows="4"
-              placeholder="Your Message"
-              className="textarea textarea-bordered w-full rounded-xl"
-              required
-            />
-
-            <button
-              type="submit"
-              className="btn bg-amber-200 hover:bg-amber-300 text-gray-800 rounded-xl w-full"
-            >
-              Send Message 🐕
-            </button>
-          </form>
-        </div>
       </div>
 
       {/* Footer Note */}
