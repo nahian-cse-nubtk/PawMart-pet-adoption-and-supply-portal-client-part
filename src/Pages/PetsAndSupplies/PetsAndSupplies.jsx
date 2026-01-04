@@ -119,7 +119,7 @@ const PetsAndSupplies = () => {
       {
         products.length===0&&<ResultNotFound></ResultNotFound>
       }
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-5">
         {products.length!==0&& products.map((product) => (
           <Catagory key={product._id} product={product}></Catagory>
         ))

@@ -51,7 +51,7 @@ export default function Banner() {
       </AnimatePresence>
 
       {/* Overlay for text */}
-      <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-6">
+      <div className="absolute inset-0  flex flex-col items-center justify-center text-center px-6">
         <motion.h1
           key={slides[index].tagline}
           className="text-white text-3xl md:text-5xl font-bold drop-shadow-lg"
@@ -59,7 +59,7 @@ export default function Banner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          
+
           {slides[index].tagline}
         </motion.h1>
 

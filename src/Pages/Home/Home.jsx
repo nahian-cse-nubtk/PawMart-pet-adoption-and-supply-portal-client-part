@@ -9,7 +9,7 @@ import PetHeroes from '../../Components/PetHeros/PetHeros';
 const Home = () => {
     return (
         <div>
-            <div className='p-5'>
+            <div className='py-5'>
                 <Banner></Banner>
             </div>
             <div className='mt-5'>

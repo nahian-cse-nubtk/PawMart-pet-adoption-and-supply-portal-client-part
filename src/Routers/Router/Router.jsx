@@ -13,6 +13,7 @@ import MyOrders from "../../Pages/MyOrders/MyOrders";
 import PrivateRouter from "../PivateRouter/PrivateRouter";
 import Error404page from "../../Components/Error404page/Error404page";
 import ProductNotFound from "../../Components/ProductNotFound/ProductNotFound";
+import PetBlog from "../../Pages/Blog/PetBlog";
 
 
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter([{
         {
             path: '/my-orders',
             element: <PrivateRouter><MyOrders></MyOrders></PrivateRouter>
+        },
+        {
+            path:'/blogs',
+            Component: PetBlog
         }
 
     ]

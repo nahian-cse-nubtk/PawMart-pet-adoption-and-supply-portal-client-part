@@ -21,13 +21,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/pets-supplies">Pets & Supplies</NavLink>
       </li>
+      <li>
+        <NavLink to="/blogs">Blogs</NavLink>
+      </li>
       {
         user&&<>
           <li>
-            <NavLink to="/add-listing">Add Listing/Products</NavLink>
+            <NavLink to="/add-listing">Add Products</NavLink>
           </li>
           <li>
-            <NavLink to="/my-listings">My Listings/Products</NavLink>
+            <NavLink to="/my-listings">My Products</NavLink>
           </li>
           <li>
             <NavLink to="/my-orders">My Orders</NavLink>
@@ -53,7 +56,7 @@ const Navbar = () => {
       }
 
   return (
-    <div className="navbar md:px-10 text-white bg-linear-to-r from-amber-500 to-orange-600 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">
+    <div className="navbar sticky top-0 z-50 md:px-20 text-white bg-linear-to-r from-amber-500 to-orange-600 dark:bg-linear-to-r dark:from-black dark:to-gray-700 shadow-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
