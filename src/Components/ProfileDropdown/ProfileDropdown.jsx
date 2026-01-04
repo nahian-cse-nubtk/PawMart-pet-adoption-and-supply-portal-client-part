@@ -83,7 +83,7 @@ export default function ProfileDropdown() {
                 >
                   <User className="w-4 h-4" /> Profile
                 </button>
-                <Link className="flex items-center gap-2 px-4 py-3 hover:bg-orange-200 transition-all" to='/dashboard'><AiTwotoneDashboard /> Dashboard</Link>
+                <Link className="flex items-center gap-2 px-4 py-3 hover:bg-orange-200 transition-all" to='/dashboard/profile'><AiTwotoneDashboard /> Dashboard</Link>
                 <button
                   className="flex items-center gap-2 px-4 py-3 hover:bg-orange-200 transition-all border-t border-white/10"
                   onClick={handleSignOut}
