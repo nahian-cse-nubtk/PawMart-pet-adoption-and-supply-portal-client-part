@@ -10,24 +10,29 @@ const PetsAndSupplies = () => {
   const [allProduct, setAllProduct] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [totalData, setTotalData] =useState(0)
+  const [totalPages, setTotalPages] =useState(0)
   const axios = useAxios();
   const serachRef = useRef();
+  const [page, setPage] = useState(1);
+   const skip = (page - 1) * 8;
+
   useEffect(() => {
     setLoading(true)
-    axios.get(`/categories?limit=${8}&skip=0`).then((data) => {
+    axios.get(`/categories?limit=8&skip=${skip}`).then((data) => {
       setProducts(data.data.result);
       setAllProduct(data.data.result);
-      setTotalData(data.data.total)
+      setTotalPages(Math.ceil(data.data.total/8))
+
+
       setTimeout(()=>{
         setLoading(false)
       },500)
     });
-    console.log(totalData)
+   
     axios.get("/onlycategories").then((data) => {
       setCategories(data.data);
     });
-  }, [axios, totalData]);
+  }, [axios, skip, totalPages]);
   if (loading) {
       return (
         <div>
@@ -126,6 +131,29 @@ const PetsAndSupplies = () => {
           <Catagory key={product._id} product={product}></Catagory>
         ))
       }
+      </div>
+      <div className="flex justify-center items-center my-5 gap-3" >
+        <button
+          className="btn bg-amber-100 dark:bg-gray-400 hover:bg-amber-200 dark:hover:bg-gray-300"
+          disabled={page === 1}
+          onClick={() => setPage((p) => p - 1)}
+
+        >
+          Prev
+        </button>
+
+        <span >
+          Page <strong>{page}</strong> of <strong>{totalPages}</strong>
+        </span>
+
+        <button
+        className="btn bg-amber-100 dark:bg-gray-400 hover:bg-amber-200 dark:hover:bg-gray-300"
+          disabled={page === totalPages}
+          onClick={() => setPage((p) => p + 1)}
+
+        >
+          Next
+        </button>
       </div>
     </div>
   );

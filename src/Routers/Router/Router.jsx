@@ -14,6 +14,7 @@ import PrivateRouter from "../PivateRouter/PrivateRouter";
 import Error404page from "../../Components/Error404page/Error404page";
 import ProductNotFound from "../../Components/ProductNotFound/ProductNotFound";
 import PetBlog from "../../Pages/Blog/PetBlog";
+import DashboardLayout from "../../Pages/dashboard/DashboardLayout/DashboardLayout";
 
 
 
@@ -51,7 +52,7 @@ const router = createBrowserRouter([{
         },
         {
             path: '/product/:productId',
-            element:<PrivateRouter><ProductDetails></ProductDetails></PrivateRouter>,
+            element:<ProductDetails></ProductDetails>,
             errorElement: <ProductNotFound></ProductNotFound>
         },
         {
@@ -64,6 +65,11 @@ const router = createBrowserRouter([{
         }
 
     ]
+
+},
+{
+    path: '/dashboard',
+    element: <PrivateRouter><DashboardLayout></DashboardLayout></PrivateRouter>
 
 },
 {

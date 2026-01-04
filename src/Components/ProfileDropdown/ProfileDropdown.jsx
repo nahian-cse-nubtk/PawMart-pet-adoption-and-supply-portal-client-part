@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { LogOut, User } from "lucide-react";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
-
+import { Link } from "react-router";
+import { AiTwotoneDashboard } from "react-icons/ai";
 export default function ProfileDropdown() {
   const [open, setOpen] = useState(false);
 
@@ -82,6 +83,7 @@ export default function ProfileDropdown() {
                 >
                   <User className="w-4 h-4" /> Profile
                 </button>
+                <Link className="flex items-center gap-2 px-4 py-3 hover:bg-orange-200 transition-all" to='/dashboard'><AiTwotoneDashboard /> Dashboard</Link>
                 <button
                   className="flex items-center gap-2 px-4 py-3 hover:bg-orange-200 transition-all border-t border-white/10"
                   onClick={handleSignOut}
