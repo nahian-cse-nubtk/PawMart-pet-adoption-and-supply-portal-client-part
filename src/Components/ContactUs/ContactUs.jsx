@@ -12,7 +12,7 @@ const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can send the form data to your backend or API
-    console.log(form);
+    // console.log(form);
     setSubmitted(true);
     setForm({ name: "", email: "", message: "" });
   };

@@ -4,7 +4,7 @@ import useAuth from './useAuth';
 import { useNavigate } from 'react-router';
 
 const instance = axios.create({
-    baseURL: 'https://pawmart-pet-adoption-and-supply.vercel.app/'
+    baseURL: 'https://pawmart-pet-adoption-and-supply.vercel.app'
 
 })
 

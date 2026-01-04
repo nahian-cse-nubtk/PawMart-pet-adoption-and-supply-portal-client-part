@@ -16,6 +16,7 @@ import ProductNotFound from "../../Components/ProductNotFound/ProductNotFound";
 import PetBlog from "../../Pages/Blog/PetBlog";
 import DashboardLayout from "../../Pages/dashboard/DashboardLayout/DashboardLayout";
 import Profile from "../../Pages/dashboard/Pages/Profile";
+import Contact from "../../Pages/Contact/Contact";
 
 
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([{
         {
             path:'/blogs',
             Component: PetBlog
+        },
+        {
+            path: "/contact",
+            Component: Contact
         }
 
     ]

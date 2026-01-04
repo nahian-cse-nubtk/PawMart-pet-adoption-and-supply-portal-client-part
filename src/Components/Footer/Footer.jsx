@@ -1,9 +1,10 @@
 import React from "react";
-import { PawPrint, Facebook, Instagram, Twitter } from "lucide-react";
+import { PawPrint,  } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router";
-
-
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
      <footer className="bg-linear-to-r from-amber-200 via-amber-250 to-amber-300
@@ -43,7 +44,7 @@ const Footer = () => {
               <Link to="/" className="hover:text-orange-700 dark:hover:text-gray-200 transition">Home</Link>
             </li>
             <li>
-              <Link to='/'  className="hover:text-orange-700 transition">Contact</Link>
+              <Link to='/contact'  className="hover:text-orange-700 transition">Contact</Link>
             </li>
             <li>
               <Link to='/' className="hover:text-orange-700 transition">Terms & Conditions</Link>
@@ -55,14 +56,14 @@ const Footer = () => {
         <div className="md:text-right">
           <h3 className="font-semibold text-lg text-orange-800 mb-3 dark:text-gray-100">Follow Us</h3>
           <div className="flex md:justify-end gap-4">
-            <a href="#" className="hover:text-orange-800 transition">
-              <Facebook className="w-5 h-5" />
+            <a href="https://www.facebook.com/" className="hover:text-orange-800 transition">
+                      <FaFacebook />
             </a>
-            <a href="#" className="hover:text-orange-800 transition">
-              <Instagram className="w-5 h-5" />
+            <a href="https://www.youtube.com/" className="hover:text-orange-800 transition">
+                      <FaYoutube />
             </a>
-            <a href="#" className="hover:text-orange-800 transition">
-              <Twitter className="w-5 h-5" />
+            <a href="https://x.com/" className="hover:text-orange-800 transition">
+              <FaXTwitter />
             </a>
           </div>
         </div>

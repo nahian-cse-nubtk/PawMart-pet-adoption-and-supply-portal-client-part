@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
 
 import Loading from "../Loading/Loading";
+import useAxios from "../../Hooks/useAxios";
+import { Navigate } from "react-router";
 
 export default function ProductDetails() {
-  const { user } = useAuth();
-
 
   const [product, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,8 @@ export default function ProductDetails() {
   const id = useParams().productId;
   const navigate = useNavigate();
 
-  const axios = useAxiosSecure();
+  const axios = useAxios()
+  const {user }=useAuth()
   useEffect(() => {
     setLoading(true);
     axios.get(`/categories/category/${id}`).then((data) =>{
@@ -37,7 +38,7 @@ export default function ProductDetails() {
 
     setTimeout(() => {
     setLoading(false);
-  }, 500);
+  }, 300);
 
     } );
   }, [axios, id, user?.displayName, user?.email]);
@@ -62,6 +63,7 @@ export default function ProductDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     //console.log("Order Submitted:", formData);
     axios.post('/orders', formData)
     .then(data=>{
@@ -123,7 +125,7 @@ export default function ProductDetails() {
 
             {/* Action Button */}
             <motion.button
-              onClick={() => modalRef.current.showModal()}
+              onClick={() =>modalRef.current.showModal()}
               whileTap={{ scale: 0.9 }}
               whileHover={{ scale: 1.05 }}
               className="mt-4 py-3 px-6 bg-amber-500 dark:bg-gray-500 hover:bg-amber-600 dark:hover:bg-gray-600 text-white rounded-xl font-semibold shadow-md transition-all duration-200 flex items-center justify-center gap-2"
